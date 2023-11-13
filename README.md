@@ -24,11 +24,11 @@ The dataset was obtained from the [Kaggle Walmart Sales Forecasting Competition]
 | product_line            | Product line of the product solf        | VARCHAR(100)   |
 | unit_price              | The price of each product               | DECIMAL(10, 2) |
 | quantity                | The amount of the product sold          | INT            |
-| VAT                 | The amount of tax on the purchase       | FLOAT(6, 4)    |
+| VAT                 	  | The amount of tax on the purchase       | FLOAT(6, 4)    |
 | total                   | The total cost of the purchase          | DECIMAL(10, 2) |
 | date                    | The date on which the purchase was made | DATE           |
 | time                    | The time at which the purchase was made | TIMESTAMP      |
-| payment_method                 | The total amount paid                   | DECIMAL(10, 2) |
+| payment_method          | The total amount paid                   | DECIMAL(10, 2) |
 | cogs                    | Cost Of Goods sold                      | DECIMAL(10, 2) |
 | gross_margin_percentage | Gross margin percentage                 | FLOAT(11, 9)   |
 | gross_income            | Gross Income                            | DECIMAL(10, 2) |
@@ -140,34 +140,4 @@ $ \text{VAT} = 5\% * COGS\\= 5\%  320.53 = 16.0265 $
 
 $ total = VAT + COGS\\= 16.0265 + 320.53 = $336.5565$
 
-$ \text{Gross Margin Percentage} = \frac{\text{gross income}}{\text{total revenue}}\\=\frac{16.0265}{336.5565} = 0.047619\\\approx 4.7619\% $
-
-## Code
-
-For the rest of the code, check the [SQL_queries.sql](https://github.com/Princekrampah/WalmartSalesAnalysis/blob/master/SQL_queries.sql) file
-
-```sql
--- Create database
-CREATE DATABASE IF NOT EXISTS walmartSales;
-
--- Create table
-CREATE TABLE IF NOT EXISTS sales(
-	invoice_id VARCHAR(30) NOT NULL PRIMARY KEY,
-    branch VARCHAR(5) NOT NULL,
-    city VARCHAR(30) NOT NULL,
-    customer_type VARCHAR(30) NOT NULL,
-    gender VARCHAR(30) NOT NULL,
-    product_line VARCHAR(100) NOT NULL,
-    unit_price DECIMAL(10,2) NOT NULL,
-    quantity INT NOT NULL,
-    tax_pct FLOAT(6,4) NOT NULL,
-    total DECIMAL(12, 4) NOT NULL,
-    date DATETIME NOT NULL,
-    time TIME NOT NULL,
-    payment VARCHAR(15) NOT NULL,
-    cogs DECIMAL(10,2) NOT NULL,
-    gross_margin_pct FLOAT(11,9),
-    gross_income DECIMAL(12, 4),
-    rating FLOAT(2, 1)
-);
-```
+				
